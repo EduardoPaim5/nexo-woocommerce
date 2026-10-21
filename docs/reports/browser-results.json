@@ -1,0 +1,16 @@
+{
+  "passed": [
+    "homepage: 8 products and all images loaded",
+    "responsive: no overflow at 390/768/1440; mobile menu and Escape",
+    "audio category filters products",
+    "product search",
+    "variable product adds selected color to cart",
+    "NEXO10 coupon applied to cart",
+    "checkout rejects missing required fields",
+    "checkout fits mobile viewport",
+    "complete demo checkout without real payment",
+    "no browser JavaScript errors"
+  ],
+  "errors": [],
+  "date": "2026-10-21T20:19:05.097Z"
+}

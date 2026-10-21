@@ -1,0 +1,32 @@
+[
+  {
+    "width": 390,
+    "route": "/",
+    "violations": []
+  },
+  {
+    "width": 390,
+    "route": "/loja/",
+    "violations": []
+  },
+  {
+    "width": 390,
+    "route": "/produto/headphone-studio-one/",
+    "violations": []
+  },
+  {
+    "width": 1440,
+    "route": "/",
+    "violations": []
+  },
+  {
+    "width": 1440,
+    "route": "/loja/",
+    "violations": []
+  },
+  {
+    "width": 1440,
+    "route": "/produto/headphone-studio-one/",
+    "violations": []
+  }
+]

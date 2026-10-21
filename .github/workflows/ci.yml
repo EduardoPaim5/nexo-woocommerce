@@ -1,0 +1,30 @@
+name: Storefront checks
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.4'
+      - run: php tests/shipping-policy.php
+      - run: find theme plugin scripts -name '*.php' -exec php -l {} \;
+      - run: bash scripts/setup.sh
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:browser
+      - run: node tests/accessibility.cjs
+      - run: docker compose exec -T wordpress php /opt/nexo-runtime/wp-cli.phar --allow-root eval-file /opt/nexo/verify-integration.php
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: browser-evidence
+          path: artifacts/
